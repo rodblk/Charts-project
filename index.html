@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHARTS</title>
+	<script type="text/javascript" src="Chart.js"></script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<div class="container">
+
+		<h3 class="titulo">TEXTO CENTRAL</h3>
+
+		<div class="chart-container">
+			<canvas id="myChart" width="200" height="200"></canvas>
+			<script>
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var myChart = new Chart(ctx, {
+			    type: 'line',
+			    data: {
+			    	labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
+			    	datasets: [{
+			    		label: "Primeiro Dataset",
+			    		fill: false,
+			    		borderColor: 'rgba(255,99,132,1)',
+			    		data: [2,5,8,7,4,6]
+			    	}, {
+			    		label: "Segundo Dataset",
+			    		fill: false,
+			    		borderColor: 'rgba(54, 162, 235, 1)',
+			    		data: [7,8,5,3,1,9]
+			    	}]
+			    },
+			    
+			    
+
+			    // }]
+			    // data: {
+			    //     labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
+			    //     datasets: [{
+			    //         label: ["votos vermelhos", "votos azuis"],
+			    //         data: {[5, 2, 3, 5, 2, 3],[2,5,4,8,7,4]},
+			    //         // backgroundColor: false;
+			    //         // backgroundColor: [
+			    //         //     'rgba(255, 99, 132, 0.2)',
+			    //         //     'rgba(54, 162, 235, 0.2)',
+			    //         //     'rgba(255, 206, 86, 0.2)',
+			    //         //     'rgba(75, 192, 192, 0.2)',
+			    //         //     'rgba(153, 102, 255, 0.2)',
+			    //         //     'rgba(255, 159, 64, 0.2)'
+			    //         // ],
+			    //         borderColor: [
+			    //             'rgba(255,99,132,1)',
+			    //             'rgba(54, 162, 235, 1)',
+			    //             'rgba(255, 206, 86, 1)',
+			    //             'rgba(75, 192, 192, 1)',
+			    //             'rgba(153, 102, 255, 1)',
+			    //             'rgba(255, 159, 64, 1)'
+			    //         ],
+			    //         borderWidth: 1
+			    //     }]
+			    options: {
+			    	responsive: true,
+			    	title: {
+			    		display: true,
+			    		text: "Gráfico de linha"
+			    	},
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
+			</script>
+		</div>
+
+
+		<p class="chart-desc">Txsdajdduofeoufsdufoabuab ubfdiagb iYGBISDYGAISYGB </p>	
+	</div>
+	
+</body>
+</html>
