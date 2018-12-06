@@ -4,8 +4,11 @@
 }
 
 .chart-container {
+	position: relative;
+	display: inline-block;
 	height: 450px;
 	width: 450px;
+	margin-right: 10px;
 }
 
 .titulo {
@@ -16,4 +19,8 @@
 
 .chart-desc {
 	float: right;
+}
+
+#myChart {
+	top: 250px;
 }
