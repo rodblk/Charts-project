@@ -5,12 +5,26 @@
 	<script type="text/javascript" src="Chart.js"></script>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap.css"> -->
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
 	<div class="container">
 
-		<h3 class="titulo">FICHA TÉCNICA</h3>
+		<h3 class="titulo">ÚLTIMA ATUALIZAÇÃO: 07/12/18 12:29</h3>
+
+		<span class="subtitulo">Curva de Carga (MW)</span>
+
+		<div align='center'>
+			<p>Selecione o subsistema:</p><br>
+			<select class="selecao">
+			  <option value="SIN">SIN</option>
+			  <option value="Norte">Norte</option>
+			  <option value="Nordeste">Nordeste</option>
+			  <option value="Sudeste/Centro-Oeste">Sudeste/Centro-Oeste</option>
+			  <option value="Sul">Sul</option>
+			</select>
+		</div>
 
 		<div class="chart-container">
 			<canvas id="myChart" width="200" height="200"></canvas>
@@ -19,17 +33,12 @@
 			var myChart = new Chart(ctx, {
 			    type: 'line',
 			    data: {
-			    	labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
+			    	labels: [0,2,4,6,8,10,12,14,16,18,20,22],
 			    	datasets: [{
-			    		label: "Primeiro Dataset",
-			    		fill: false,
+			    		label: "Carga",
 			    		borderColor: 'rgba(255,99,132,1)',
-			    		data: [2,5,8,7,4,6]
-			    	}, {
-			    		label: "Segundo Dataset",
-			    		fill: false,
-			    		borderColor: 'rgba(54, 162, 235, 1)',
-			    		data: [7,8,5,3,1,9]
+			    		backgroundColor: 'rgba(255,99,132,0.5)',
+			    		data: [262,526,844,788,411,626,267,145,581,262]
 			    	}]
 			    },
 			    
@@ -64,7 +73,6 @@
 			    	responsive: true,
 			    	title: {
 			    		display: true,
-			    		text: "Gráfico de linha"
 			    	},
 			        scales: {
 			            yAxes: [{
@@ -80,56 +88,71 @@
 
 		<div class="tabela">
 			<div class="tab-conteudo">
-				<h5>07/12/2018</h5>
+				<h5>07/12/2018 12:29</h5>
 				<div class="row">
-					<span class="p">Nome:</span>
-					<span class="q">Kakaroto Son Goku</span>
+					<span class="p">Carga</span>
+					<span class="q">75135,6 MW</span>
 				</div>
 				<div class="row">
-					<span class="p">Poder de luta:</span>
-					<span class="q">Mais de 8000</span>
+					<span class="p">Exportação</span>
+					<span class="q">0,0 MW</span>
 				</div>
 				<br><hr>
 				<div class="row-b">
-					<span class="p">Técnica 1:</span>
-					<span class="q">Kaioken</span>
+					<span class="p">Ger. Eólica</span>
+					<span class="q">3357,2 MW</span>
 				</div>
 				<div class="row-b">
-					<span class="p">Técnica 2:</span>
-					<span class="q">Kamehameha</span>
+					<span class="p">Ger. Hidráulica</span>
+					<span class="q">61821,2</span>
 				</div>
 				<div class="row-b">
-					<span class="p">Técnica 3:</span>
-					<span class="q">Genki Dama</span>
+					<span class="p">Ger. Térmica</span>
+					<span class="q">7158,2</span>
+				</div>
+				<div class="row-b">
+					<span class="p">Ger. Nuclear</span>
+					<span class="q">1824,1 MW</span>
+				</div>
+				<div class="row-b">
+					<span class="p">Ger. Solar</span>
+					<span class="q">961,4 MW</span>
+				</div>
+				<div class="row-b">
+					<span class="p">Importação</span>
+					<span class="q">0,4 MW</span>
 				</div>
 			</div>
-			<p>* Informações retiradas da memória.</p>	
+			<p>*Arredondamento de valores pode causar diferenças de até 1 MW</p>	
 		</div>
 
-		<span class="subtitulo">Estatísticas:</span>
+		<span class="subtitulo">Valores acumulados no dia em MWmed até: 12:29</span>
 
 		<div class="chart-container">
-			<canvas id="batalhas" width="200" height="200"></canvas>
+			<canvas id="distribuicao" width="200" height="200"></canvas>
 			<script>
-			var ctx = document.getElementById("batalhas");
+			var ctx = document.getElementById("distribuicao");
 			var myChart = new Chart(ctx, {
 			    type: 'pie',
 			    data: {
-			        labels: ["Vitórias", "Derrotas", "Empates", "Morreu"],
+			        labels: ["Eólica", "Hidráulica", "Térmica", "Nuclear", "Solar", "Importação"],
 			        datasets: [{
-			            label: 'Quantidade',
-			            data: [27, 5, 3, 1],
+			            data: [27, 21, 15, 10, 5, 1],
 			            backgroundColor: [
 			                'rgba(255, 99, 132, 0.2)',
 			                'rgba(54, 162, 235, 0.2)',
 			                'rgba(255, 206, 86, 0.2)',
-			                'rgba(75, 192, 192, 0.2)'
+			                'rgba(75, 192, 192, 0.2)',
+			                'rgba(204, 0, 255, 0.2)',
+			                'rgba(190, 65, 102, 0.2)'
 			            ],
 			            borderColor: [
 			                'rgba(255,99,132,1)',
 			                'rgba(54, 162, 235, 1)',
 			                'rgba(255, 206, 86, 1)',
-			                'rgba(75, 192, 192, 1)'
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(204, 0, 255, 1)',
+			                'rgba(190, 65, 102, 1)',
 			            ],
 			            borderWidth: 1
 			        }]
@@ -148,19 +171,65 @@
 		</div>
 
 		<div class="chart-container rightchart">
-			<canvas id="poderDeLuta" width="200" height="200"></canvas>
+			<canvas id="carga" width="200" height="200"></canvas>
 			<script>
-			var ctx = document.getElementById("poderDeLuta").getContext('2d');
+			var ctx = document.getElementById("carga");
+			var myChart = new Chart(ctx, {
+			    type: 'pie',
+			    data: {
+			        labels: ["Carga", "Outro"],
+			        datasets: [{
+			            data: [27, 0],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        // scales: {
+			        //     yAxes: [{
+			        //         ticks: {
+			        //             beginAtZero:true
+			        //         }
+			        //     }]
+			        // }
+			    }
+			});
+			</script>
+		</div>
+
+		<span class="subtitulo">Curva de Geração (MW)</span>
+
+		<div align='center'>
+			<p>Selecione o tipo:</p><br>
+			<select class="selecao">
+			  <option value="Norte">Geração Eólica</option>
+			  <option value="SIN">Geração Hidráulica</option>
+			  <option value="Nordeste">Geração Nuclear</option>
+			  <option value="Sudeste/Centro-Oeste">Geração Solar</option>
+			  <option value="Sul">Geração Térmica</option>
+			</select>
+		</div>
+
+		<div class="chart-container full">
+			<canvas id="geracao" width="940px" height="800"></canvas>
+			<script>
+			var ctx = document.getElementById("geracao").getContext('2d');
 			var myChart = new Chart(ctx, {
 			    type: 'line',
 			    data: {
-			    	labels: ["0", "1", "2", "3", "4", "5"],
+			    	labels: [0,2,4,6,8,10,12,14,16,18,20,22],
 			    	datasets: [{
-			    		label: "Evolução do poder de luta",
-			    		// fill: false,
-			    		backgroundColor: 'rgba(255,99,132,0.5)',
+			    		label: "Carga",
 			    		borderColor: 'rgba(255,99,132,1)',
-			    		data: [{x: 0,y: 1200},{x: 1,y: 2350},{x: 2,y: 4600},{x: 3,y: 7500},{x: 4,y: 8500},{x: 5,y: 9700}]
+			    		backgroundColor: 'rgba(255,99,132,0.5)',
+			    		data: [262,526,844,788,411,626,267,145,581,262]
 			    	}]
 			    },
 			    
@@ -195,7 +264,6 @@
 			    	responsive: true,
 			    	title: {
 			    		display: true,
-			    		text: "Gráfico de linha"
 			    	},
 			        scales: {
 			            yAxes: [{
@@ -207,7 +275,41 @@
 			    }
 			});
 			</script>
-		</div>		
+		</div>
+
+		<!-- <div class="chart-container rightchart">
+			<canvas id="poderDeLuta" width="200" height="200"></canvas>
+			<script>
+			var ctx = document.getElementById("poderDeLuta").getContext('2d');
+			var myChart = new Chart(ctx, {
+			    type: 'line',
+			    data: {
+			    	labels: ["0", "1", "2", "3", "4", "5"],
+			    	datasets: [{
+			    		label: "Poder de Luta",
+			    		// fill: false,
+			    		backgroundColor: 'rgba(255,99,132,0.5)',
+			    		borderColor: 'rgba(255,99,132,1)',
+			    		data: [{x: 0,y: 1200},{x: 1,y: 2350},{x: 2,y: 4600},{x: 3,y: 7500},{x: 4,y: 8500},{x: 5,y: 9700}]
+			    	}]
+			    },
+			    options: {
+			    	responsive: true,
+			    	title: {
+			    		display: true,
+			    		text: "Evolução do Poder de Luta"
+			    	},
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
+			</script>
+		</div> -->		
 
 		<!-- <div class="chart-container">
 			<canvas id="myChart2" width="50" height="50"></canvas>

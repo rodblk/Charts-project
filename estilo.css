@@ -1,3 +1,11 @@
+body {
+	font-family: Arial;
+}
+
+.full {
+	width: 100%;
+}
+
 .container {
 	width: 60%;
 	margin-left: 20%;
@@ -19,8 +27,8 @@
 .titulo {
 	padding: 10px 12px;
 	font-size: 25px;
-	color: yellow;
-	background-color: blue;
+	color: orange;
+	/*background-color: blue;*/
 	text-align: center;
 }
 
@@ -33,6 +41,8 @@
 }
 
 .tabela {
+	position: relative;
+	top: 20px;
 	float: right;
 	margin-right: 20px;
 	margin-top: 20px;
@@ -88,8 +98,14 @@
 	display: block;
 	text-align: center;
 	position: : relative;
-	top: 20px;
-	background-color: #662;
-	color: white;
+	/*top: 40px;*/
+	/*background-color: #662;*/
+	/*color: white;*/
+	margin-top: 20px;
 	margin-bottom: 20px; 
+}
+
+.selecao {
+	clear: both;
+	display: block;
 }
