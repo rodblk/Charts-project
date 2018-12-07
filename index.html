@@ -4,12 +4,13 @@
 	<title>CHARTS</title>
 	<script type="text/javascript" src="Chart.js"></script>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
 	<div class="container">
 
-		<h3 class="titulo">TEXTO CENTRAL</h3>
+		<h3 class="titulo">FICHA TÉCNICA</h3>
 
 		<div class="chart-container">
 			<canvas id="myChart" width="200" height="200"></canvas>
@@ -77,7 +78,138 @@
 			</script>
 		</div>
 
+		<div class="tabela">
+			<div class="tab-conteudo">
+				<h5>07/12/2018</h5>
+				<div class="row">
+					<span class="p">Nome:</span>
+					<span class="q">Kakaroto Son Goku</span>
+				</div>
+				<div class="row">
+					<span class="p">Poder de luta:</span>
+					<span class="q">Mais de 8000</span>
+				</div>
+				<br><hr>
+				<div class="row-b">
+					<span class="p">Técnica 1:</span>
+					<span class="q">Kaioken</span>
+				</div>
+				<div class="row-b">
+					<span class="p">Técnica 2:</span>
+					<span class="q">Kamehameha</span>
+				</div>
+				<div class="row-b">
+					<span class="p">Técnica 3:</span>
+					<span class="q">Genki Dama</span>
+				</div>
+			</div>
+			<p>* Informações retiradas da memória.</p>	
+		</div>
+
+		<span class="subtitulo">Estatísticas:</span>
+
 		<div class="chart-container">
+			<canvas id="batalhas" width="200" height="200"></canvas>
+			<script>
+			var ctx = document.getElementById("batalhas");
+			var myChart = new Chart(ctx, {
+			    type: 'pie',
+			    data: {
+			        labels: ["Vitórias", "Derrotas", "Empates", "Morreu"],
+			        datasets: [{
+			            label: 'Quantidade',
+			            data: [27, 5, 3, 1],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.2)',
+			                'rgba(54, 162, 235, 0.2)',
+			                'rgba(255, 206, 86, 0.2)',
+			                'rgba(75, 192, 192, 0.2)'
+			            ],
+			            borderColor: [
+			                'rgba(255,99,132,1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)'
+			            ],
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        // scales: {
+			        //     yAxes: [{
+			        //         ticks: {
+			        //             beginAtZero:true
+			        //         }
+			        //     }]
+			        // }
+			    }
+			});
+			</script>
+		</div>
+
+		<div class="chart-container rightchart">
+			<canvas id="poderDeLuta" width="200" height="200"></canvas>
+			<script>
+			var ctx = document.getElementById("poderDeLuta").getContext('2d');
+			var myChart = new Chart(ctx, {
+			    type: 'line',
+			    data: {
+			    	labels: ["0", "1", "2", "3", "4", "5"],
+			    	datasets: [{
+			    		label: "Evolução do poder de luta",
+			    		// fill: false,
+			    		backgroundColor: 'rgba(255,99,132,0.5)',
+			    		borderColor: 'rgba(255,99,132,1)',
+			    		data: [{x: 0,y: 1200},{x: 1,y: 2350},{x: 2,y: 4600},{x: 3,y: 7500},{x: 4,y: 8500},{x: 5,y: 9700}]
+			    	}]
+			    },
+			    
+			    
+
+			    // }]
+			    // data: {
+			    //     labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
+			    //     datasets: [{
+			    //         label: ["votos vermelhos", "votos azuis"],
+			    //         data: {[5, 2, 3, 5, 2, 3],[2,5,4,8,7,4]},
+			    //         // backgroundColor: false;
+			    //         // backgroundColor: [
+			    //         //     'rgba(255, 99, 132, 0.2)',
+			    //         //     'rgba(54, 162, 235, 0.2)',
+			    //         //     'rgba(255, 206, 86, 0.2)',
+			    //         //     'rgba(75, 192, 192, 0.2)',
+			    //         //     'rgba(153, 102, 255, 0.2)',
+			    //         //     'rgba(255, 159, 64, 0.2)'
+			    //         // ],
+			    //         borderColor: [
+			    //             'rgba(255,99,132,1)',
+			    //             'rgba(54, 162, 235, 1)',
+			    //             'rgba(255, 206, 86, 1)',
+			    //             'rgba(75, 192, 192, 1)',
+			    //             'rgba(153, 102, 255, 1)',
+			    //             'rgba(255, 159, 64, 1)'
+			    //         ],
+			    //         borderWidth: 1
+			    //     }]
+			    options: {
+			    	responsive: true,
+			    	title: {
+			    		display: true,
+			    		text: "Gráfico de linha"
+			    	},
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			});
+			</script>
+		</div>		
+
+		<!-- <div class="chart-container">
 			<canvas id="myChart2" width="50" height="50"></canvas>
 			<script>
 			var ctx = document.getElementById("myChart2");
@@ -167,7 +299,7 @@
 
 
 		<p class="chart-desc">Txsdajdduofeoufsdufoabuab ubfdiagb iYGBISDYGAISYGB </p>	
-	</div>
+	</div> -->
 	
 </body>
 </html>

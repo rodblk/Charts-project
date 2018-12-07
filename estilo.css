@@ -1,6 +1,7 @@
 .container {
-	width: 80%;
-	margin-left: 10%;
+	width: 60%;
+	margin-left: 20%;
+	overflow: hidden;
 }
 
 .chart-container {
@@ -8,10 +9,16 @@
 	display: inline-block;
 	height: 450px;
 	width: 450px;
-	margin-right: 10px;
+}
+
+.rightchart {
+	float: right;
+	right: 20px;
 }
 
 .titulo {
+	padding: 10px 12px;
+	font-size: 25px;
 	color: yellow;
 	background-color: blue;
 	text-align: center;
@@ -23,4 +30,66 @@
 
 #myChart {
 	top: 250px;
+}
+
+.tabela {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.tab-conteudo {
+	overflow: hidden;
+	border: 1px solid;
+	width: 400px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+
+.tab-conteudo h5 {
+	border-bottom: 1px solid;
+	width: 100%;
+	padding: 12px 16px;
+	font-size: 20px;
+	margin-top: -5px;
+	margin-left: -15px;
+	background-color: #339;
+	color: white;	
+}
+
+.row {
+	font-weight: bold;
+	clear: both;
+	padding-top: 5px;
+}
+
+.row-b {
+	font-weight: bold;
+	clear: both;
+	padding-top: 5px;
+	color: green;
+}
+
+.p {
+	float: left;
+	width: auto;
+
+}
+
+.q {
+	float: right;
+	width: auto;
+}
+
+.subtitulo {
+	font-size: 25px;
+	display: block;
+	text-align: center;
+	position: : relative;
+	top: 20px;
+	background-color: #662;
+	color: white;
+	margin-bottom: 20px; 
 }
